@@ -1,0 +1,149 @@
+{
+    "Security Migration Setup": {
+        "LDAP Migration Setup": {
+            "LDAP Group Name": "migratedNexusGroup", 
+            "LDAP Setting Name": "migratedNexusSetting", 
+            "Migrate LDAP": true
+        }, 
+        "Users Migration Setup": {
+            "admin": {
+                "available": true, 
+                "Is An Administrator": true, 
+                "Migrate This User": false, 
+                "User Name (Artifactory)": "admin", 
+                "Groups": [
+                    "nx-admin"
+                ], 
+                "Is Enabled": true, 
+                "Email Address": "changeme@yourcompany.com"
+            }, 
+            "jose-arcadio": {
+                "available": true, 
+                "Is An Administrator": false, 
+                "Migrate This User": true, 
+                "User Name (Artifactory)": "jose-arcadio", 
+                "Groups": [
+                    "any-all-view"
+                ], 
+                "Is Enabled": true, 
+                "Email Address": "jose.arcadio@gmail.com"
+            }, 
+            "anonymous": {
+                "available": true, 
+                "Is An Administrator": false, 
+                "Migrate This User": false, 
+                "User Name (Artifactory)": "anonymous", 
+                "Groups": [
+                    "repository-any-read", 
+                    "anonymous"
+                ], 
+                "Is Enabled": true, 
+                "Email Address": "changeme2@yourcompany.com"
+            }, 
+            "deployment": {
+                "available": true, 
+                "Is An Administrator": false, 
+                "Migrate This User": true, 
+                "User Name (Artifactory)": "deployment", 
+                "Groups": [
+                    "nx-deployment", 
+                    "repository-any-full"
+                ], 
+                "Is Enabled": true, 
+                "Email Address": "changeme1@yourcompany.com"
+            }, 
+            "Default Password": "password", 
+            "paco": {
+                "available": true, 
+                "Is An Administrator": true, 
+                "Migrate This User": true,
+                "User Name (Artifactory)": "paco", 
+                "Groups": [
+                    "nx-admin"
+                ], 
+                "Is Enabled": true, 
+                "Password": "password123", 
+                "Email Address": "paco@foo.com"
+            }
+        }
+    }, 
+    "Repository Migration Setup": {
+        "thirdparty": {
+            "available": true, 
+            "Handles Releases": true, 
+            "Repo Name (Artifactory)": "thirdparty", 
+            "Migrate This Repo": true, 
+            "Suppresses Pom Consistency Checks": false, 
+            "Repo Layout": "maven-2-default", 
+            "Handles Snapshots": false, 
+            "Maven Snapshot Version Behavior": "unique", 
+            "Repo Description": "3rd party"
+        }, 
+        "central": {
+            "available": true, 
+            "Handles Releases": true, 
+            "Repo Name (Artifactory)": "central", 
+            "Migrate This Repo": true, 
+            "Suppresses Pom Consistency Checks": false, 
+            "Remote URL": "https://repo1.maven.org/maven2/", 
+            "Repo Layout": "maven-2-default", 
+            "Handles Snapshots": false, 
+            "Repo Description": "Central"
+        }, 
+        "releases": {
+            "available": true, 
+            "Handles Releases": true, 
+            "Repo Name (Artifactory)": "releases", 
+            "Migrate This Repo": true, 
+            "Suppresses Pom Consistency Checks": false, 
+            "Repo Layout": "maven-2-default", 
+            "Handles Snapshots": false, 
+            "Maven Snapshot Version Behavior": "unique", 
+            "Repo Description": "Releases"
+        }, 
+        "Default Max Unique Snapshots": "0", 
+        "snapshots": {
+            "available": true, 
+            "Handles Releases": false, 
+            "Repo Name (Artifactory)": "snapshots", 
+            "Migrate This Repo": true, 
+            "Suppresses Pom Consistency Checks": false, 
+            "Repo Layout": "maven-2-default", 
+            "Handles Snapshots": true, 
+            "Maven Snapshot Version Behavior": "unique", 
+            "Repo Description": "Snapshots"
+        }, 
+        "Hash All Artifacts": false, 
+        "apache-snapshots": {
+            "available": true, 
+            "Handles Releases": false, 
+            "Repo Name (Artifactory)": "apache-snapshots", 
+            "Migrate This Repo": true, 
+            "Suppresses Pom Consistency Checks": false, 
+            "Remote URL": "https://repository.apache.org/snapshots/", 
+            "Repo Layout": "maven-2-default", 
+            "Handles Snapshots": true, 
+            "Repo Description": "Apache Snapshots"
+        }, 
+        "central-m1": {
+            "available": true, 
+            "Repo Description": "Central M1 shadow", 
+            "Repo Name (Artifactory)": "central-m1", 
+            "Migrate This Repo": false, 
+            "Repo Layout": "maven-1-default"
+        }, 
+        "public": {
+            "available": true, 
+            "Repo Description": "Public Repositories", 
+            "Repo Name (Artifactory)": "public", 
+            "Migrate This Repo": true, 
+            "Repo Layout": "maven-2-default"
+        }
+    }, 
+    "Initial Setup": {
+        "Nexus Path": "/Users/arturoa/Projects/nexus2artifactory/nex2art/tests/functional-tests/resources/basicNexus2", 
+        "Artifactory URL": "http://localhost:8082/artifactory", 
+        "Artifactory Username": "admin", 
+        "Artifactory Password": "password"
+    }
+}

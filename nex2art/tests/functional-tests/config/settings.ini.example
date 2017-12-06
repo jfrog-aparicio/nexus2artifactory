@@ -1,0 +1,4 @@
+[Artifactory]
+version=5.6.2
+exposedPort=8081
+dockerIP=localhost
